@@ -17,31 +17,154 @@
 
 **InterviewAI** is an AI-powered interview preparation platform designed to help candidates prepare for technical interviews based on their **resume, skills, and target job description**.
 
-Instead of following a generic interview preparation plan, InterviewAI analyzes the candidate's profile and the requirements of the target role to generate a personalized preparation strategy.
+The platform helps candidates prepare for interviews by analyzing:
 
-### 🎯 What it does
+- 📄 Resume
+- 💼 Job Description
+- 👨‍💻 Candidate's Skills & Experience
+- 🎯 Job Requirements
 
-- 📄 Upload your resume
-- 💼 Add a target job description
-- 🤖 AI analyzes your profile against the role
-- 📊 Generates a personalized interview plan
-- 🧠 Identifies skill gaps
-- 🎯 Calculates job-match score
-- 🗺️ Creates a structured preparation roadmap
-- 📚 Maintains previous interview plans
-- 📥 Generates an ATS-friendly resume
-- 🔐 Provides authenticated user access
+The AI then generates a personalized interview strategy containing:
+
+- Match Score
+- Interview Questions
+- Skill Gaps
+- Preparation Roadmap
+- Recent Interview Plans
+- Personalized Recommendations
+
+The application also allows users to upload their resume in **PDF/DOCX format** instead of manually entering their information.
 
 ---
 
-## 🖥️ Features
+## ✨ Features
+
+### 🔐 Authentication
+
+- User Registration
+- User Login
+- JWT Authentication
+- Protected Routes
+- Secure Password Hashing
+- Persistent User Sessions
+
+### 🤖 AI-Powered Interview Analysis
+
+- Analyze Job Description
+- Analyze Resume
+- Analyze Candidate Profile
+- Generate Personalized Interview Strategy
+- Generate Relevant Interview Questions
+- Identify Skill Gaps
+- Calculate Job Match Score
+- Generate Preparation Roadmap
 
 ### 📄 Resume Upload
 
-Upload your existing resume in supported formats and let the AI use your experience, projects, skills, and education to personalize your preparation strategy.
+Users can provide their profile through:
 
-Supported formats:
+- PDF Resume
+- DOCX Resume
+- Manual Self Description
+
+This allows users to quickly generate personalized interview preparation plans.
+
+### 📊 Interview Dashboard
+
+The dashboard provides:
+
+- Overall Match Score
+- Interview Questions
+- Skill Gap Analysis
+- Preparation Roadmap
+- Recent Interview Plans
+
+### 📑 AI Resume Generator
+
+The platform can also generate an ATS-friendly resume based on:
+
+- Existing Resume
+- Self Description
+- Target Job Description
+
+The generated resume can be converted into a downloadable PDF.
+
+### 🎨 Modern UI
+
+- Dark themed interface
+- Responsive design
+- Modern dashboard
+- SCSS-based styling
+- Interactive components
+- Loading animations
+- Clean card-based UI
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+| Technology | Purpose |
+|------------|---------|
+| React.js | UI Development |
+| React Router | Client-side Routing |
+| SCSS | Styling |
+| Axios | API Communication |
+| Vite | Development & Build Tool |
+| JavaScript | Application Logic |
+| HTML5 | Structure |
+| CSS3 | Styling |
+
+## Backend
+
+| Technology | Purpose |
+|------------|---------|
+| Node.js | Runtime |
+| Express.js | Backend Framework |
+| MongoDB | Database |
+| Mongoose | MongoDB ODM |
+| JWT | Authentication |
+| bcrypt | Password Hashing |
+| Google Gemini AI | AI Generation |
+| Multer | File Upload |
+| PDF Processing | Resume Extraction |
+| Puppeteer / PDF Generator | Resume PDF Generation |
+
+---
+
+# 🏗️ Project Architecture
 
 ```text
-PDF
-DOCX
+CodeSky/
+│
+├── Backend/
+│   │
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── middlewares/
+│   │   └── utils/
+│   │
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+│
+├── Frontend/
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   ├── style/
+│   │   └── App.jsx
+│   │
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── .gitignore
+└── README.md
