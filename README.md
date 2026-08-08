@@ -7,6 +7,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
   <img src="https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white" />
   <img src="https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
   <img src="https://img.shields.io/badge/Google%20Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white" />
 </p>
@@ -168,3 +169,21 @@ CodeSky/
 │
 ├── .gitignore
 └── README.md
+```
+---
+
+# 👨‍💻 Author
+
+## Akash Shit
+
+**Aspiring Software Engineer | Full Stack Web Developer | Problem Solver**
+
+Passionate about building scalable web applications, solving challenging programming problems, and continuously learning modern technologies.
+
+---
+
+# ⭐ Show Your Support
+
+If you like this portfolio, please consider giving the repository a ⭐.
+
+It motivates me to build more amazing open-source projects.
