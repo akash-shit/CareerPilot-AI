@@ -1,0 +1,1137 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// VARIABLES
+// ─────────────────────────────────────────────────────────────────────────────
+
+$bg-page: #0d1117;
+$bg-card: #161b22;
+$bg-panel: #1c2230;
+$bg-input: #1e2535;
+$border-color: #2a3348;
+
+$text-primary: #e6edf3;
+$text-muted: #7d8590;
+
+$accent: #ff2d78;
+$accent-hover: #ff4f8f;
+
+$info-bg: #1b2a4a;
+$info-border: #2d4a7a;
+
+$success: #3fb950;
+$warning: #f5a623;
+$danger: #ff4d4d;
+
+$font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RESET
+// ─────────────────────────────────────────────────────────────────────────────
+
+* {
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PAGE
+// ─────────────────────────────────────────────────────────────────────────────
+
+.home-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: $bg-page;
+    color: $text-primary;
+
+    font-family: $font-stack;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PAGE HEADER
+// ─────────────────────────────────────────────────────────────────────────────
+
+.page-header {
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+
+    h1 {
+        margin: 0 0 0.6rem;
+
+        font-size: 2.25rem;
+        font-weight: 700;
+
+        color: $text-primary;
+
+        line-height: 1.2;
+    }
+
+    p {
+        margin: 0 auto;
+
+        max-width: 560px;
+
+        color: $text-muted;
+
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .highlight {
+        color: $accent;
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MAIN INTERVIEW CARD
+// ─────────────────────────────────────────────────────────────────────────────
+
+.interview-card {
+    width: 100%;
+    max-width: 900px;
+
+    background-color: $bg-card;
+
+    border: 1px solid $border-color;
+    border-radius: 1rem;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // CARD BODY
+    // ─────────────────────────────────────────────────────────────────────────
+
+    &__body {
+        display: flex;
+
+        min-height: 520px;
+    }
+
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // CARD FOOTER
+    // ─────────────────────────────────────────────────────────────────────────
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 1rem;
+
+        padding: 1rem 1.5rem;
+
+        border-top: 1px solid $border-color;
+
+        background-color: $bg-card;
+
+        .footer-info {
+            font-size: 0.8rem;
+            color: $text-muted;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PANELS
+// ─────────────────────────────────────────────────────────────────────────────
+
+.panel {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    padding: 1.5rem;
+
+    min-width: 0;
+
+
+    // HEADER
+
+    &__header {
+        display: flex;
+        align-items: center;
+
+        gap: 0.5rem;
+
+        margin-bottom: 0.25rem;
+
+        h2 {
+            flex: 1;
+
+            margin: 0;
+
+            font-size: 1rem;
+            font-weight: 600;
+
+            color: $text-primary;
+        }
+    }
+
+
+    // ICON
+
+    &__icon {
+        display: flex;
+        align-items: center;
+
+        color: $accent;
+
+        flex-shrink: 0;
+    }
+
+
+    // TEXTAREA
+
+    &__textarea {
+        width: 100%;
+        flex: 1;
+
+        min-height: 300px;
+
+        background-color: $bg-input;
+
+        border: 1px solid $border-color;
+        border-radius: 0.5rem;
+
+        padding: 0.75rem 1rem;
+
+        color: $text-primary;
+
+        font-family: $font-stack;
+        font-size: 0.875rem;
+
+        line-height: 1.5;
+
+        resize: none;
+
+        outline: none;
+
+        transition:
+            border-color 0.2s ease,
+            background-color 0.2s ease;
+
+        &::placeholder {
+            color: $text-muted;
+        }
+
+        &:focus {
+            border-color: $accent;
+            background-color: #20283a;
+        }
+
+
+        // SHORT TEXTAREA
+
+        &--short {
+            flex: none;
+
+            height: 96px;
+            min-height: 96px;
+        }
+    }
+
+
+    // LEFT PANEL
+
+    &--left {
+        position: relative;
+
+        .char-counter {
+            position: absolute;
+
+            bottom: 2.1rem;
+            right: 2rem;
+
+            font-size: 0.7rem;
+
+            color: $text-muted;
+        }
+    }
+
+
+    // RIGHT PANEL
+
+    &--right {
+        gap: 0.75rem;
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PANEL DIVIDER
+// ─────────────────────────────────────────────────────────────────────────────
+
+.panel-divider {
+    width: 1px;
+
+    background-color: $border-color;
+
+    flex-shrink: 0;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// BADGES
+// ─────────────────────────────────────────────────────────────────────────────
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 0.65rem;
+    font-weight: 600;
+
+    padding: 0.2rem 0.5rem;
+
+    border-radius: 0.3rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.03em;
+
+    white-space: nowrap;
+
+
+    &--required {
+        background-color: rgba($accent, 0.12);
+
+        color: $accent;
+
+        border: 1px solid rgba($accent, 0.3);
+    }
+
+
+    &--best {
+        background-color: rgba($accent, 0.12);
+
+        color: $accent;
+
+        border: 1px solid rgba($accent, 0.3);
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION LABEL
+// ─────────────────────────────────────────────────────────────────────────────
+
+.section-label {
+    display: flex;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    margin-bottom: 0.25rem;
+
+    font-size: 0.875rem;
+
+    font-weight: 500;
+
+    color: $text-primary;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// UPLOAD SECTION
+// ─────────────────────────────────────────────────────────────────────────────
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DROPZONE
+// ─────────────────────────────────────────────────────────────────────────────
+
+.dropzone {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.35rem;
+
+    min-height: 145px;
+
+    padding: 1.5rem 1rem;
+
+    background-color: $bg-input;
+
+    border: 2px dashed $border-color;
+
+    border-radius: 0.6rem;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+
+
+    &:hover {
+        border-color: $accent;
+
+        background-color: rgba($accent, 0.05);
+
+        transform: translateY(-1px);
+    }
+
+
+    &__icon {
+        display: flex;
+
+        color: $accent;
+
+        margin-bottom: 0.25rem;
+    }
+
+
+    &__title {
+        margin: 0;
+
+        font-size: 0.875rem;
+
+        font-weight: 500;
+
+        color: $text-primary;
+    }
+
+
+    &__subtitle {
+        margin: 0;
+
+        font-size: 0.75rem;
+
+        color: $text-muted;
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// OR DIVIDER
+// ─────────────────────────────────────────────────────────────────────────────
+
+.or-divider {
+    display: flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    color: $text-muted;
+
+    font-size: 0.75rem;
+
+
+    &::before,
+    &::after {
+        content: "";
+
+        flex: 1;
+
+        height: 1px;
+
+        background-color: $border-color;
+    }
+
+
+    span {
+        white-space: nowrap;
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SELF DESCRIPTION
+// ─────────────────────────────────────────────────────────────────────────────
+
+.self-description {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// INFO BOX
+// ─────────────────────────────────────────────────────────────────────────────
+
+.info-box {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 0.6rem;
+
+    padding: 0.75rem 1rem;
+
+    background-color: $info-bg;
+
+    border: 1px solid $info-border;
+
+    border-radius: 0.5rem;
+
+
+    &__icon {
+        display: flex;
+
+        flex-shrink: 0;
+
+        color: #4a90e2;
+
+        margin-top: 1px;
+    }
+
+
+    p {
+        margin: 0;
+
+        font-size: 0.8rem;
+
+        color: #8ab4f8;
+
+        line-height: 1.5;
+
+
+        strong {
+            color: $text-primary;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// GENERATE BUTTON
+// ─────────────────────────────────────────────────────────────────────────────
+
+.generate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    padding: 0.75rem 1.5rem;
+
+    background: linear-gradient(
+        135deg,
+        $accent,
+        #e91e63
+    );
+
+    color: white;
+
+    font-family: $font-stack;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    border: none;
+
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        box-shadow 0.2s ease;
+
+
+    &:hover {
+        background: linear-gradient(
+            135deg,
+            $accent-hover,
+            $accent
+        );
+
+        box-shadow: 0 5px 20px rgba($accent, 0.25);
+    }
+
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RECENT REPORTS
+// ─────────────────────────────────────────────────────────────────────────────
+
+.recent-reports {
+    width: 100%;
+
+    max-width: 900px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.25rem;
+
+
+    // HEADER
+
+    &__header {
+        display: flex;
+
+        align-items: flex-end;
+
+        justify-content: space-between;
+
+        gap: 1rem;
+    }
+
+
+    &__eyebrow {
+        margin: 0 0 0.35rem;
+
+        font-size: 0.7rem;
+
+        font-weight: 700;
+
+        letter-spacing: 0.1em;
+
+        color: $text-muted;
+    }
+
+
+    h2 {
+        margin: 0;
+
+        font-size: 1.5rem;
+
+        font-weight: 700;
+
+        color: $text-primary;
+    }
+
+
+    &__count {
+        flex-shrink: 0;
+
+        padding: 0.35rem 0.75rem;
+
+        border: 1px solid $border-color;
+
+        border-radius: 999px;
+
+        color: $text-muted;
+
+        font-size: 0.8rem;
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// REPORT LIST
+// ─────────────────────────────────────────────────────────────────────────────
+
+.reports-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.75rem;
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// REPORT ITEM
+// ─────────────────────────────────────────────────────────────────────────────
+
+.report-item {
+    width: 100%;
+
+    min-height: 88px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 1rem 1.25rem;
+
+    background-color: $bg-card;
+
+    border: 1px solid $border-color;
+
+    border-radius: 0.75rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+
+    &:hover {
+        background-color: $bg-panel;
+
+        border-color: $accent;
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+
+        .report-item__arrow {
+            color: $accent;
+
+            transform: translateX(4px);
+        }
+    }
+
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // LEFT INFORMATION
+    // ─────────────────────────────────────────────────────────────────────────
+
+    &__info {
+        flex: 1;
+
+        min-width: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 1rem;
+    }
+
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // DOCUMENT ICON
+    // ─────────────────────────────────────────────────────────────────────────
+
+    &__icon {
+        width: 44px;
+        height: 44px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        color: $accent;
+
+        background-color: rgba($accent, 0.1);
+
+        border: 1px solid rgba($accent, 0.25);
+
+        border-radius: 0.6rem;
+
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // REPORT TITLE
+    // ─────────────────────────────────────────────────────────────────────────
+
+    h3 {
+        margin: 0 0 0.3rem;
+
+        font-size: 1rem;
+
+        font-weight: 650;
+
+        color: $text-primary;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // REPORT DATE
+    // ─────────────────────────────────────────────────────────────────────────
+
+    .report-meta {
+        margin: 0;
+
+        font-size: 0.8rem;
+
+        color: $text-muted;
+    }
+
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // ARROW
+    // ─────────────────────────────────────────────────────────────────────────
+
+    &__arrow {
+        width: 36px;
+        height: 36px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        color: $text-muted;
+
+        transition:
+            color 0.2s ease,
+            transform 0.2s ease;
+
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// REPORT SCORE
+// ─────────────────────────────────────────────────────────────────────────────
+
+.report-score {
+    width: 110px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 1.5rem;
+
+
+    &__label {
+        margin-bottom: 0.2rem;
+
+        font-size: 0.7rem;
+
+        color: $text-muted;
+    }
+
+
+    &__value {
+        font-size: 1.05rem;
+
+        font-weight: 700;
+    }
+
+
+    &.score--high {
+
+        .report-score__value {
+            color: $success;
+        }
+    }
+
+
+    &.score--mid {
+
+        .report-score__value {
+            color: $warning;
+        }
+    }
+
+
+    &.score--low {
+
+        .report-score__value {
+            color: $danger;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PAGE FOOTER
+// ─────────────────────────────────────────────────────────────────────────────
+
+.page-footer {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 1.5rem;
+
+    padding-bottom: 1rem;
+
+
+    a {
+        font-size: 0.8rem;
+
+        color: $text-muted;
+
+        text-decoration: none;
+
+        transition: color 0.2s ease;
+
+
+        &:hover {
+            color: $text-primary;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// LOADING SCREEN
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── Loading Spinner ───────────────────────────────────────────────────────────
+
+.loading-screen {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $bg-page;
+}
+
+.loader {
+    width: 42px;
+    height: 42px;
+
+    border: 4px solid rgba($accent, 0.2);
+    border-top-color: $accent;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// TABLET
+// ─────────────────────────────────────────────────────────────────────────────
+
+@media (max-width: 850px) {
+
+    .home-page {
+        padding: 2rem 1rem;
+    }
+
+
+    .interview-card__body {
+        flex-direction: column;
+    }
+
+
+    .panel {
+        min-height: 400px;
+    }
+
+
+    .panel-divider {
+        width: 100%;
+        height: 1px;
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MOBILE
+// ─────────────────────────────────────────────────────────────────────────────
+
+@media (max-width: 600px) {
+
+    .home-page {
+        padding: 1.5rem 0.75rem;
+
+        gap: 1.5rem;
+    }
+
+
+    .page-header {
+
+        h1 {
+            font-size: 1.75rem;
+        }
+
+
+        p {
+            font-size: 0.85rem;
+        }
+    }
+
+
+    .interview-card {
+        border-radius: 0.75rem;
+    }
+
+
+    .panel {
+        padding: 1rem;
+
+        min-height: 360px;
+    }
+
+
+    .interview-card__footer {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 1rem;
+    }
+
+
+    .footer-info {
+        text-align: center;
+    }
+
+
+    .generate-btn {
+        width: 100%;
+    }
+
+
+    .recent-reports {
+
+        &__header {
+            align-items: flex-start;
+        }
+
+
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
+
+
+    .report-item {
+        min-height: 78px;
+
+        padding: 0.8rem;
+    }
+
+
+    .report-item__info {
+        gap: 0.7rem;
+    }
+
+
+    .report-item__icon {
+        width: 38px;
+        height: 38px;
+
+
+        svg {
+            width: 19px;
+            height: 19px;
+        }
+    }
+
+
+    .report-item h3 {
+        max-width: 150px;
+
+        font-size: 0.9rem;
+    }
+
+
+    .report-item .report-meta {
+        font-size: 0.7rem;
+    }
+
+
+    .report-score {
+        width: auto;
+
+        margin-right: 0.5rem;
+
+
+        &__label {
+            display: none;
+        }
+
+
+        &__value {
+            font-size: 0.9rem;
+        }
+    }
+
+
+    .report-item__arrow {
+        width: 26px;
+        height: 26px;
+    }
+
+
+    .page-footer {
+        flex-wrap: wrap;
+
+        gap: 1rem;
+    }
+}
+
+
+.dropzone--selected {
+    border-color: $accent;
+    background-color: rgba($accent, 0.05);
+
+    .dropzone__icon {
+        color: $accent;
+    }
+
+    .dropzone__title {
+        color: $text-primary;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
