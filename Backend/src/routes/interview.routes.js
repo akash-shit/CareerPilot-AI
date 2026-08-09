@@ -13,13 +13,7 @@ const interviewRouter = express.Router()
  * @access private
  */
 interviewRouter.post("/", authMiddleware.authUser, upload.single("resume"), interviewController.generateInterViewReportController)
-// interviewRouter.post("/", (req, res) => {
-//     console.log("🔥 INTERVIEW ROUTE HIT");
 
-//     res.status(200).json({
-//         message: "Interview route is working"
-//     });
-// });
 
 
 /**
