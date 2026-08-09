@@ -1,4 +1,4 @@
-# 🚀 InterviewAI — AI-Powered Interview Preparation Platform
+# 🚀 CareerPilot AI — AI-Powered career preparation platform designed to help job seekers become interview-ready
 
 <p align="center">
   <strong>Turn your resume and job description into a personalized interview preparation strategy.</strong>
